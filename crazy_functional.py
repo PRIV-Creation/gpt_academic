@@ -445,5 +445,16 @@ def get_crazy_functions():
     #     })
     # except:
     #     print('Load function plugin failed')
+    try:
+        from crazy_functions.批量文献综述 import 批量文献综述
+        function_plugins.update({
+            "批量文献综述": {
+                "Color": "stop",
+                "AsButton": False,  # 加入下拉菜单中
+                "Function": HotReload(批量文献综述)
+            }
+        })
+    except:
+        print('Load function plugin failed')
 
     return function_plugins
